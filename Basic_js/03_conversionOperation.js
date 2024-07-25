@@ -37,11 +37,57 @@ console.log(booleanIsLoggedIn);
 // undefine => false
 
 
-let value;
+let value= null;
 
 let StringIt= String(value);
 console.log(StringIt);
 
+// String Conversion-----------------
+// 33 => "33"
 
+
+//==========================Operators==================
  
+let nums=33;
+let negNums=-nums;
+console.log(negNums); // -33
+
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+// console.log(2**3);
+// console.log(2/3);
+// console.log(2%3);
+
+// concation
+// let str1="hel";
+// let str2="lo";
+// console.log(str1+str2);
+
+// move or run from left to right side-----
+// console.log("1" + 2);
+// console.log(1 + "2");
+// console.log("1" + 2 + 2);
+// console.log(1 + 2 + "2");
+
+// console.log(3+2-1*4/2); it follow board_mass
+
+// console.log(+true); 1
+// console.log(+"");   0
+
+// let n1, n2 , n3;
+// n1=n2=n3=2+2;
+
+let gamePoint=0;
+// let post=gamePoint++;
+// console.log(post);
+
+// let pre=++gamePoint;
+// console.log(pre);
+
+console.log(gamePoint);
+
+
+
+
 
