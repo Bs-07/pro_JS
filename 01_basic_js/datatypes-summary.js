@@ -58,5 +58,5 @@ const  callOut= function() {
 }
 
 console.log(typeof heros);
-
+ 
 
