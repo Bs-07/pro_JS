@@ -59,4 +59,33 @@ const  callOut= function() {
 
 console.log(typeof heros);
  
+// *******************************************
+//  Stack (primitive), Heap (reference)
 
+/*
+Stack memory didn't give the reference, but it
+give the copy of variable.That's how the primitive datatype are immutable.
+*/
+let myEmail="neha@google.com";
+let anotherEmail= myEmail;
+
+console.log(myEmail+" "+anotherEmail);
+anotherEmail="foo";
+console.log(myEmail,anotherEmail);
+
+/*
+Heap memory give the reference of variable.That's how the reference
+(non-primitive) datatype are mutable.
+
+if we make changes in copied variable, then changes will also be 
+visible to main variable. 
+*/
+let userOne= {
+    email:"polly@bm.com",
+    upi:"polly@sbi"
+}
+let userTwo= userOne;
+userTwo.upi="adam@icici";
+
+console.log("user_1: "+userOne.upi);
+console.log("user_2: "+userTwo.upi);
