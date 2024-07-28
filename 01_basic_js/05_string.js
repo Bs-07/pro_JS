@@ -32,11 +32,13 @@ console.log(gameName.indexOf("d")); //-1 (not found)
 const fun= "Javascript";
 console.log(fun.substring(2,5)); // vas
 console.log(fun.substring(5,2)); // vas
+console.log(gameName.substring(3)); // Ph Duplass
 
 // slice: take two indices (start,end) and return char b/w them
 
 console.log(fun.slice(0,3)); // Jav
 console.log(fun.slice(-3,9)); // ip
+console.log(fun.slice(-3)); // ipt
 
 // substr(): extracts part of a string and returns it in a new string. 
 // Although it is similar to the slice() method, 
@@ -49,6 +51,41 @@ const userName=" shomnath ";
 const fistL_Capital=userName.trim().slice(0,1).toUpperCase();
 const remain_name= userName.slice(2,userName.length);
 console.log(fistL_Capital.concat(remain_name));
+
+// match(): match regex(regulr expression) and return the array of match string
+const description="hello!, every one is very very very good to be here."
+const regex=/very/g;
+console.log(description.match(regex));
+
+// replace():
+console.log(fun.replace('Java','Fun')); // Javascript => Funscript
+console.log(description.replace(regex,"nice"));
+
+// split(): return the array of seperate char of string
+console.log(fun.split('')); // [ 'J', 'a', 'v', 'a', 's', 'c', 'r', 'i','p', 't']
+console.log(fun.split('',4)); // [ 'J', 'a', 'v', 'a']
+
+// includes(); return boolean value if found; true/ notFound: false
+console.log(fun.includes("script")); // true
+console.log(fun.includes("j",0)); // true
+
+// repeat(): 
+console.log(fun.repeat(2)); // JavascriptJavascript
+
+// padStart(): 
+const numb='2';
+console.log(numb.padStart(2,'0'));
+
+
+const creditCardNum='2034399002125581';
+const lastFourDigit= creditCardNum.slice(-4);
+const maskedNum= lastFourDigit.padStart(creditCardNum.length,'*');
+
+console.log(maskedNum);
+
+
+
+
 
 
 
