@@ -20,3 +20,7 @@ console.log(num3.toPrecision(4)); //133.4
 // toLocaleString():
 const balance=10000000;
 console.log(balance.toLocaleString('en-IN'));
+
+// =================Maths=============================================
+
+console.log(Math);
