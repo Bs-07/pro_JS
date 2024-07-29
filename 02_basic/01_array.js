@@ -32,7 +32,22 @@ console.log(num1);
 // include(): return boolean if element found or not
 console.log(num1.includes(9)); // false
 
-// 
+// slice(): return the array b/w given start and before end value
+const h1=[1,2,3,4,5,6];
+console.log(h1.slice(2,5));
+console.log("after slice called: ", h1);
+
+// slice(): 
+/*
+return array from start and to the end, but here those elements who are seperated by splice as a new array
+will be removed from the main array. that's the difference b/w splice() and slice() 
+*/
+const h2=[1,2,3,4,5,6];
+console.log(h1.splice(2,5));
+console.log("after splice called: ", h1);
+
+
+
 
 
 // const arr22= ['2','02'];
@@ -40,3 +55,5 @@ console.log(num1.includes(9)); // false
 
 // const arr33=[1,2,'',4,'4',''];
 // console.log(arr33.length);
+
+
