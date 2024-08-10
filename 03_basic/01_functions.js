@@ -10,10 +10,11 @@ const hi= function(){
 hi();
 hi();
 
-const hoola= (name)=>{
+const hoola= (name="user")=>{
     console.log(`${name} Chiche`);
 }
 hoola("John");
+hoola();
 
 // function overLoad() {  
 //     console.log("default");
@@ -21,9 +22,7 @@ hoola("John");
 // function overLoad(name){
 //     console.log(`hello, ${name}`);
 // }
-// function overLoad(num1,num2) {
-//     console.log(`sum: ${num1}+${num2}`);
-// }
-overLoad();
-overLoad("Ryan");
-overLoad(2,4);
+function overLoad(num1 ,num2=1) {
+    return num1 * num2;
+}
+console.log(overLoad(4));
