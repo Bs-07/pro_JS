@@ -68,12 +68,12 @@ const {courseInstructor: instructor} = course;
 console.log(instructor);
 
 // API Syntax
-{
-    "name":"foo",
-    "courseName":"pro_js",
-    "price":999,
-    "courseInstructor":"kal"
-}
+// {
+//     "name":"foo",
+//     "courseName":"pro_js",
+//     "price":999,
+//     "courseInstructor":"kal"
+// }
 
 [
     {},
