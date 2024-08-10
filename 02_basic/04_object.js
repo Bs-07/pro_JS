@@ -54,4 +54,29 @@ console.log(Object.entries(tinderUser));
 console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 console.log(tinderUser.hasOwnProperty('checkOrder'));
 
+const course = {
+    courseName:"pro_js",
+    price:"999",
+    courseInstructor:"kal"
+}
 
+// console.log(course.courseInstructor);
+// console.log(course["courseInstructor"]);
+
+const {courseInstructor: instructor} = course;
+// console.log(courseInstructor);
+console.log(instructor);
+
+// API Syntax
+{
+    "name":"foo",
+    "courseName":"pro_js",
+    "price":999,
+    "courseInstructor":"kal"
+}
+
+[
+    {},
+    {},
+    {}
+]
