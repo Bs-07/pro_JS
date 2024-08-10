@@ -26,3 +26,9 @@ function overLoad(num1 ,num2=1) {
     return num1 * num2;
 }
 console.log(overLoad(4));
+
+ /*
+ After calling return in fun() don't write code, it didn't work. 
+ */
+
+ 
