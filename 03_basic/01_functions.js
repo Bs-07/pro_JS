@@ -27,6 +27,16 @@ function overLoad(num1 ,num2=1) {
 }
 console.log(overLoad(4));
 
+
+function loginUserMessage(username = "user"){
+    if(!username){
+        console.log("please enter username");
+        return;
+    }
+    return `${username} just logged in...`;
+}
+console.log(loginUserMessage());
+
  /*
  After calling return in fun() don't write code, it didn't work. 
  */
@@ -58,6 +68,26 @@ function fun(val1, val2, ...price){
 
 
 //  passing object as parameter
-function handleObject(){
-    
+
+const user={
+    username: "foo",
+    price:2199
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);    
 } 
+
+handleObject(user);
+// handleObject({
+//     username: "foo",
+//     price:2199
+// });
+
+const myNewArray= [123,234,345,456];
+
+function handleArray(anyArray) {
+    return anyArray;
+}
+
+console.log(handleArray(myNewArray)); 
