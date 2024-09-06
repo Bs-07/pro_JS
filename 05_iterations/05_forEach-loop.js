@@ -28,3 +28,16 @@ const arrObj = [
 arrObj.forEach( (el)=>{
     console.log(el);
 } )
+
+/*
+    forEach did not return a value 
+    for that we use filter
+*/
+
+const newArray = [];
+
+coding.forEach( (el)=>{
+    newArray.push(el);
+} )
+
+console.log(newArray);
