@@ -16,8 +16,8 @@ while(i<superHero.length){
 
 // do while 
 
-
-// let index=0;
-// do {
-//     console.log(index);
-// } while (index<10);
+let index=11;
+do {
+    console.log(index);
+    index++
+} while (index<=10);
