@@ -22,7 +22,7 @@ user.introduce();
 //     return num+2;
 // }
 
-// don't use return when we don't use {} braket
+// don't use return when we don't use {} scope
 // const addTwo= (num=1)=>  num+2;
 const addTwo= (num=1)=>  (num+2);
 
