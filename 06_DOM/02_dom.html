@@ -37,5 +37,17 @@
 
     // give the node list 
     console.log("NODES:", parent.childNodes);
+
+    const h2 = document.createElement('h2');
+    console.log(h2);
+    h2.className = "sub_heading";
+    h2.id = `sub_heading-${Math.round(Math.random()*10+1)}`;
+    h2.setAttribute("name", "heading");
+    
+    const addTxt = document.createTextNode("I love DOM");
+    h2.appendChild(addTxt);
+
+    parent.firstElementChild.appendChild(h2);
+
 </script>
 </html>
