@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="lang">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName){
+        const lang_item = document.createElement('li');
+        
+        const addTxt = document.createTextNode(langName);
+        lang_item.appendChild(addTxt);
+
+        const lang_list = document.querySelector('.lang');
+        lang_list.appendChild(lang_item);
+    }
+    addLang("java");
+    addLang("C++");
+    addLang("ruby");
+    addLang("goLang");
+
+    // Edit tag
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // 1. secondLang.innerHTML = "mojo";
+    // 2.
+    const newli = document.createElement('li');
+    newli.textContent="mojo";
+    secondLang.replaceWith(newli);
+    // 3. 
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>typescript</li>";
+
+    // remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+
+</script>
+</html>
