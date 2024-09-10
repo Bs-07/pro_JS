@@ -100,3 +100,98 @@ setInterval(()=>{
 
 
 ```
+
+## project 4
+
+```javascript
+let random_num = Math.round(Math.random() * 100 + 1);
+console.log(random_num);
+
+const submit_btn = document.querySelector('#subt');
+const userInput = document.querySelector('#guessField');
+const guessSlot = document.querySelector('.guesses');
+const remaining = document.querySelector('.lastResult');
+const lowOrHi = document.querySelector('.lowOrHi');
+const startOver = document.querySelector('.resultParas');
+
+const p = document.createElement('p');
+
+let prevGuess = [];
+let numGuess = 1;
+
+let playGame = true;
+
+if (playGame) {
+  submit_btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const guess = parseInt(userInput.value);
+    validGuess(guess);
+  });
+}
+
+function validGuess(guess) {
+  if (guess == '' || guess < 1 || guess > 100 || isNaN(guess)) {
+    alert(`Please enter a valid guess`);
+  } else {
+    prevGuess.push(guess);
+    if (numGuess === 11) {
+      displayGuesss(guess);
+      displayMessage(`Game over. Random was ${random_num} :(`);
+      endGame();
+    } else {
+      displayGuesss(guess);
+      checkGuess(guess);
+    }
+  }
+}
+
+function checkGuess(guess) {
+  if (guess === random_num) {
+    displayMessage(`You guessed it right :)`);
+    endGame();
+  } else if (guess < random_num) {
+    displayMessage(`too low guess`);
+  } else if (guess > random_num) {
+    displayMessage(`too high guess`);
+  }
+}
+
+function displayGuesss(guess) {
+  userInput.value = '';
+  guessSlot.innerHTML += `${guess} `;
+  numGuess++;
+  remaining.innerHTML = `${11 - numGuess}`;
+}
+
+function displayMessage(message) {
+  lowOrHi.innerHTML = `<h2>${message}</h2>`;
+}
+
+function endGame() {
+  userInput.value = '';
+  userInput.setAttribute('disabled', '');
+  p.classList.add('button');
+  p.innerHTML = `<h2 id=newGame> Start New Game</h2>`;
+  startOver.appendChild(p);
+  playGame = false;
+  newGame();
+}
+
+function newGame() {
+  const new_Game = document.querySelector('#newGame');
+  new_Game.addEventListener('click', (e) => {
+    random_num = Math.round(Math.random() * 100 + 1);
+    prevGuess.length = 0;
+    numGuess = 1;
+    guessSlot.innerHTML = ``;
+    remaining.innerHTML = `${11 - numGuess}`;
+    userInput.removeAttribute('disabled');
+    lowOrHi.innerHTML = `<h2></h2>`;
+    startOver.removeChild(p);
+
+    playGame = true;
+  });
+}
+
+
+```
