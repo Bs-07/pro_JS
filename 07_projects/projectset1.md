@@ -195,3 +195,52 @@ function newGame() {
 
 
 ```
+
+## project 6
+
+```javascript
+const start = document.querySelector('#start');
+const stop = document.querySelector('#stop');
+
+// generating Random Color in rgb(255,0,255);
+// function rgbColor() {
+//   let r = Math.floor(Math.random() * 256);
+//   let g = Math.floor(Math.random() * 256);
+//   let b = Math.floor(Math.random() * 256);
+//   let rgb = `rgb(${r},${g},${b})`;
+//   return rgb;
+// }
+// const newColor = rgbColor();
+
+// generating Random Color in hax(#ffff)
+const randomColor = function () {
+  const hax = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hax[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+let changeBackground;
+
+const startChangingColor = () => {
+  if(!changeBackground){
+    changeBackground = setInterval(changeColor, 1000);
+  }
+
+  function changeColor() {
+    document.body.style.backgroundColor = randomColor();
+    console.log(randomColor());
+  }
+};
+
+const stopChangingColor = ()=>{
+  clearInterval(changeBackground);
+  changeBackground = null;
+}
+
+start.addEventListener('click', startChangingColor, false);
+stop.addEventListener('click', stopChangingColor, false);
+
+```
