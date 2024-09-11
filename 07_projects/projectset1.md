@@ -196,6 +196,24 @@ function newGame() {
 
 ```
 
+## project 5
+
+```javascript
+const keyPress = document.querySelector('#insert');
+
+const h2 = document.createElement('h2');
+h2.id = 'keyName';
+h2.innerHTML = 'keyName';
+keyPress.appendChild(h2);
+
+window.addEventListener('keydown', (e) => {
+  h2.innerHTML = `keyName: ${e.key === ' ' ? 'Space' : e.key} <br> keyCode: ${
+    e.keyCode
+  } <br> Code: ${e.code === ' ' ? 'shiftRight' : e.code}`;
+});
+
+```
+
 ## project 6
 
 ```javascript
