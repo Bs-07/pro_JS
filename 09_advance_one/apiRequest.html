@@ -55,7 +55,7 @@
             // main_div.style.backgroundColor = "transparent";
             // main_div.style.backdropFilter = "blur(2px)";
             // main_div.style.color = "#fff";
-            main_div.style.padding = '1rem';
+            main_div.style.padding = '1.5rem';
             main_div.style.maxWidth = '40rem';
             main_div.style.display = 'grid';
             // main_div.style.justifyItems = 'center';
@@ -119,6 +119,15 @@
             followers.style.color = '#000';
             followers.style.marginBottom = '1rem';
             main_div.appendChild(followers);
+
+            const resp = document.createElement('span');
+            resp.className = "user_followers";
+            resp.innerHTML = `Followers: ${data.public_repos}`;
+            resp.style.fontSize = '1.4rem';
+            // resp.style.fontWeight = '600';
+            resp.style.color = '#000';
+            resp.style.marginBottom = '1rem';
+            main_div.appendChild(resp);
             
             // const followings = document.createElement('span');
             // followings.className = "user_followings";
@@ -132,6 +141,7 @@
             btn.style.backgroundColor = "#000";
             btn.style.color = "#fff";
             btn.style.padding = "1rem";
+            btn.style.marginBottom = ".5rem";
             btn.style.borderRadius = "1rem";
             btn.style.border = "none";
 
