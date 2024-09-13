@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+    body{
+        background-color: #414141;
+        color: #333;
+        font-size: 1rem;
+        font-family: sans-serif;
+    }
+</style>
+<body>
+<!-- Value   State	            Description
+0	    UNSENT	            Client has been created. open() not called yet.
+1	    OPENED	            open() has been called.
+2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	    LOADING	            Downloading; responseText holds partial data.
+4	    DONE	            The operation is complete. -->
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            // console.log(typeof data);
+
+            // creating info. form 
+            console.log(data.followers);
+            const main_div = document.createElement('div');
+            main_div.className = 'main_div';
+            // main_div.innerHTML = `<h2> Namaskaram </h2>`;
+            main_div.style.backgroundColor = "#fff";
+            // main_div.style.backgroundColor = "transparent";
+            // main_div.style.backdropFilter = "blur(2px)";
+            // main_div.style.color = "#fff";
+            main_div.style.padding = '1rem';
+            main_div.style.maxWidth = '40rem';
+            main_div.style.display = 'grid';
+            // main_div.style.justifyItems = 'center';
+            main_div.style.alignContent = 'center';
+            // main_div.style.gap = '1rem';
+
+            main_div.style.borderRadius = '1rem';
+        
+            document.body.appendChild(main_div);
+
+            const img_div = document.createElement('div');
+            img_div.className = "img_box";
+            img_div.style.width = '8rem';
+            img_div.style.height = '8rem';
+            img_div.style.padding = '2px';
+            img_div.style.marginBottom = '1rem';
+            img_div.style.border = "2px solid #c90838";
+            img_div.style.borderRadius = '50%';
+
+            main_div.appendChild(img_div);
+
+            const img = document.createElement('img');
+            img.className = "user_img";
+            img.setAttribute('src', `${data.avatar_url}`);
+            // img.setAttribute('weight', 90);
+            // img.setAttribute('height', 90);
+            img.style.width = "100%";
+            img.style.height = "auto";
+            // img.style.display = "block"
+            // img.style.margin = "0 auto"
+            // img.style.marginTop = "0 auto"
+
+            img.style.borderRadius = "50%"
+            img_div.appendChild(img);
+
+            const h1 = document.createElement('h1');
+            h1.className = "user_name";
+            h1.innerHTML = `${data.name}`;
+            h1.style.marginBottom = '4px';
+            main_div.appendChild(h1);
+
+            const p = document.createElement('p');
+            p.className = "user_id";
+            p.innerHTML = `${data.login}`;
+            p.style.fontSize = '1.4rem';
+            p.style.marginBottom = '1rem';
+            main_div.appendChild(p);
+
+            const bio = document.createElement('p');
+            bio.className = "user_bio";
+            bio.innerHTML = `${data.bio}`;
+            bio.style.fontSize = '1.4rem';
+            bio.style.marginBottom = '1rem';
+            main_div.appendChild(bio);
+
+            const followers = document.createElement('span');
+            followers.className = "user_followers";
+            followers.innerHTML = `Followers: ${data.followers}`;
+            followers.style.fontSize = '1.4rem';
+            // followers.style.fontWeight = '600';
+            followers.style.color = '#000';
+            followers.style.marginBottom = '1rem';
+            main_div.appendChild(followers);
+            
+            // const followings = document.createElement('span');
+            // followings.className = "user_followings";
+            // followings.innerHTML = `Followings: ${data.following}`;
+            // main_div.appendChild(followings);
+            
+            const btn = document.createElement('button');
+            btn.className = "btn";
+            btn.setAttribute('type', 'submit');
+            btn.innerHTML = `Get data`;
+            btn.style.backgroundColor = "#000";
+            btn.style.color = "#fff";
+            btn.style.padding = "1rem";
+            btn.style.borderRadius = "1rem";
+            btn.style.border = "none";
+
+            main_div.appendChild(btn);
+        }
+    }
+    xhr.send();
+
+</script>
+</html>
