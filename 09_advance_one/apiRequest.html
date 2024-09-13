@@ -20,6 +20,7 @@
         color: #333;
         font-size: 1rem;
         font-family: sans-serif;
+        position: relative;
     }
 </style>
 <body>
@@ -46,6 +47,11 @@
             main_div.className = 'main_div';
             // main_div.innerHTML = `<h2> Namaskaram </h2>`;
             main_div.style.backgroundColor = "#fff";
+            main_div.style.position = "absolute";
+            main_div.style.top = "50%";
+            main_div.style.left = "50%";
+            main_div.style.transform = "translate(-50%, 50%)";
+
             // main_div.style.backgroundColor = "transparent";
             // main_div.style.backdropFilter = "blur(2px)";
             // main_div.style.color = "#fff";
