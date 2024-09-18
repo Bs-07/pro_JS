@@ -93,10 +93,26 @@ consumePromise();
 
 // getAllUsers();
 
-fetch('https://jsonplaceholder.typicode.com/users').then((response)=>{
+fetch('https://jsonplaceholder.typicode.com/users',{method: 'GET'}).then((response)=>{
     return response.json(); 
 }).then((data)=>{
     console.log(data);
 }).catch((err)=>{
     console.log(err);
 });
+
+// 
+fetch('https://jsonplaceholder.typicode.com/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: 'John Doe',
+      age: 30
+    })
+  })
+    .then(response => response.json())  // assuming the response is JSON
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+  
