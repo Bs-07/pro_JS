@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    function outer() {
+    let name = "Mozilla";
+    // console.log(inner_name); can't access 
+
+    function innner() {
+        let inner_name = "sozilla";
+        console.log("Inner", name);
+    }
+    function innnerTwo() {
+        let innerTwo_name = "sozilla";
+        console.log("Inner", name);
+        // console.log("InnerTwo", inner_name); can't access 
+    }
+    innner();
+    innnerTwo();
+}
+
+outer();
+// console.log(name); can't access name 
+
+/*
+    Lexical Scoping--
+    
+*/
+</script>
+<script>
+    function clickHandle(color){
+
+        return function() {
+            document.body.style.backgroundColor = `${color}`;
+        }
+    }
+
+    document.getElementById("orange").onclick = clickHandle("orange");
+    document.getElementById("green").onclick = clickHandle("green");
+</script>
+</html>
