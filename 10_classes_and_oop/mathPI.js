@@ -9,6 +9,7 @@ const chai = Object.create(null);
 chai.name = "Darjeeling tea";
 chai["price"] = 220;
 chai["isAvaliable"] = true;
+chai["chai_status"] = function(){console.log('chai faat gayi');}
 console.log(chai);
 
 console.log(Object.getOwnPropertyDescriptor(chai,"name"));
@@ -20,8 +21,10 @@ console.log(Object.getOwnPropertyDescriptor(chai,"name"));
 
 console.log(Object.getOwnPropertyDescriptor(chai,"name"));
 
-for(const [value,key] of Object.entries(chai)){
-    console.log(`${key}: ${value}`);
+for(const [key,value] of Object.entries(chai)){
+    if(typeof value !== "function"){
+        console.log(`${key}: ${value}`);
+    }
 }
 
 // const obj = Object.entries(chai)
